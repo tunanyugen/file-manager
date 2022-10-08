@@ -1,4 +1,5 @@
 import * as React from "react";
+import getMaxHeight from "../../helpers/getMaxHeight";
 import {
   StyledFolder,
   StyledFolderChildren,
@@ -13,23 +14,33 @@ const FolderExpandIcon = require("../../../assets/folder-expand.svg");
 export interface FolderProps {
   name: string;
   children: FolderProps[];
+  setMaxHeight?: (value: number) => any;
 }
 function renderChildren(props: FolderProps) {
-  return props.children.map((folder) => {
-    return <Folder {...folder} />;
+  return props.children.map((folder, index) => {
+    return <Folder key={`${index}-${folder.name}`} {...folder} />;
   });
 }
 function Folder(props: FolderProps) {
+  const [collapsed, setCollapsed] = React.useState(true);
   return (
     <StyledFolder>
       <StyledFolderLabel>
-        <StyledFolderExpandButton>
-          <StyledFolderExpand src={FolderExpandIcon} alt="expand" />
+        <StyledFolderExpandButton
+          onClick={(e) => {
+            setCollapsed(!collapsed);
+          }}
+        >
+          <StyledFolderExpand collapsed={collapsed} src={FolderExpandIcon} alt="expand" />
         </StyledFolderExpandButton>
         <StyledFolderIcon src={FolderIcon} alt="folder" />
         {props.name}
       </StyledFolderLabel>
-      <StyledFolderChildren>{renderChildren(props)}</StyledFolderChildren>
+      <StyledFolderChildren
+        collapsed={collapsed}
+      >
+        {renderChildren(props)}
+      </StyledFolderChildren>
     </StyledFolder>
   );
 }

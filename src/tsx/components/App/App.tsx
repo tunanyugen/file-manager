@@ -1,8 +1,9 @@
 import React from "react";
 import Location from "../Location/Location";
+import { StyledMain, StyledMain as StyledRight } from "../Main/StyledMain";
 import Navigation from "../Navigation/Navigation";
 import Sidebar from "../Sidebar/Sidebar";
-import { StyledApp, StyledLeft, StyledTop } from "./StyledApp";
+import { StyledApp, StyledBottom, StyledLeft, StyledTop } from "./StyledApp";
 
 function App() {
   return (
@@ -11,9 +12,14 @@ function App() {
         <Navigation />
         <Location value="C:\" />
       </StyledTop>
-      <StyledLeft>
-        <Sidebar />
-      </StyledLeft>
+      <StyledBottom>
+        <StyledLeft>
+          <Sidebar />
+        </StyledLeft>
+        <StyledRight>
+          <StyledMain />
+        </StyledRight>
+      </StyledBottom>
     </StyledApp>
   );
 }
