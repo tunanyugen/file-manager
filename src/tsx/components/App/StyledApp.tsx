@@ -17,5 +17,6 @@ export const StyledLeft = styled.div`
   overflow: auto;
 `;
 export const StyledRight = styled.div`
-  
+  flex: 1;
+  overflow: auto;
 `;

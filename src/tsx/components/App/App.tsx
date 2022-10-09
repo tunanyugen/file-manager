@@ -1,9 +1,10 @@
 import React from "react";
 import Location from "../Location/Location";
-import { StyledMain, StyledMain as StyledRight } from "../Main/StyledMain";
+import { EntityTypes } from "../Main/Entity";
+import Main from "../Main/Main";
 import Navigation from "../Navigation/Navigation";
 import Sidebar from "../Sidebar/Sidebar";
-import { StyledApp, StyledBottom, StyledLeft, StyledTop } from "./StyledApp";
+import { StyledApp, StyledBottom, StyledLeft, StyledRight, StyledTop } from "./StyledApp";
 
 function App() {
   return (
@@ -17,7 +18,92 @@ function App() {
           <Sidebar />
         </StyledLeft>
         <StyledRight>
-          <StyledMain />
+          <Main entities={[
+            {
+              type: EntityTypes.file,
+              name: "File",
+            },
+            {
+              type: EntityTypes.folder,
+              name: "Folder",
+            },
+            {
+              type: EntityTypes.image,
+              name: "Image",
+            },
+            {
+              type: EntityTypes.file,
+              name: "File",
+            },
+            {
+              type: EntityTypes.folder,
+              name: "Folder",
+            },
+            {
+              type: EntityTypes.image,
+              name: "Image",
+            },
+            {
+              type: EntityTypes.file,
+              name: "File",
+            },
+            {
+              type: EntityTypes.folder,
+              name: "Folder",
+            },
+            {
+              type: EntityTypes.image,
+              name: "Image",
+            },
+            {
+              type: EntityTypes.file,
+              name: "File",
+            },
+            {
+              type: EntityTypes.folder,
+              name: "Folder",
+            },
+            {
+              type: EntityTypes.image,
+              name: "Image",
+            },
+            {
+              type: EntityTypes.file,
+              name: "File",
+            },
+            {
+              type: EntityTypes.folder,
+              name: "Folder",
+            },
+            {
+              type: EntityTypes.image,
+              name: "Image",
+            },
+            {
+              type: EntityTypes.file,
+              name: "File",
+            },
+            {
+              type: EntityTypes.folder,
+              name: "Folder",
+            },
+            {
+              type: EntityTypes.image,
+              name: "Image",
+            },
+            {
+              type: EntityTypes.file,
+              name: "File",
+            },
+            {
+              type: EntityTypes.folder,
+              name: "Folder",
+            },
+            {
+              type: EntityTypes.image,
+              name: "Image",
+            },
+          ]}/>
         </StyledRight>
       </StyledBottom>
     </StyledApp>
